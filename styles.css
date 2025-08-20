@@ -18,6 +18,7 @@ body {
     position: relative;
     display: flex;
     flex-direction: column;
+
 }
 
 /* Clases para mostrar/ocultar según dispositivo */
@@ -519,6 +520,7 @@ background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
 .game-area.active {
     display: flex;
     flex-direction: column;
+    margin-bottom: 60px;
 }
 
 /* Cartas descartadas - Desktop */
@@ -721,6 +723,8 @@ background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
     padding: 20px;
     margin-left: 300px;
     margin-right: 200px;
+    
+    
 }
 
 /* Cartas descartadas para móvil - entre timer y carta */
@@ -1559,6 +1563,7 @@ background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
     .main-game-area {
         margin-left: 240px;
         margin-right: 160px;
+        margin-bottom: 50px;
     }
     
     .discarded-area.desktop-only {
@@ -1631,20 +1636,22 @@ background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
     
     .game-area {
         padding-top: 80px;
+        
     }
     
     /* Layout móvil: la columna debe poder crecer y hacer scroll si es necesario */
-    .main-game-area {
-        flex-direction: column;
-        gap: 0;
-        padding: 5px 20px 20px 20px;
-        margin-left: 0;
-        margin-right: 0;
-        justify-content: flex-start;
-        height: auto;              /* antes: calc(100vh - 80px) */
-        overflow: auto;            /* antes: hidden */
-        -webkit-overflow-scrolling: touch;
-    }
+ .main-game-area {
+    flex-direction: column;
+    gap: 0;
+    padding: 5px 20px 100px 20px; /* << más padding abajo */
+    margin-left: 0;
+    margin-right: 0;
+    justify-content: flex-start;
+    height: auto;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    /* quitamos margin-bottom aquí */
+}
     
     /* Cartas descartadas móvil - altura reducida */
     .discarded-area.mobile-only {
@@ -1681,20 +1688,20 @@ background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
     }
     
     /* CONTROLES MÓVIL — en flujo, debajo de la carta */
-    .game-controls {
-        position: static;          /* antes: absolute */
-        transform: none;
-        left: auto; right: auto; bottom: auto;
-        flex-direction: row;
-        justify-content: center;
-        align-items: stretch;
-        gap: 12px;
-        flex-shrink: 0;
-        padding: 0;
-        margin-top: 8px;           /* separación de la carta */
-        background: transparent;
-        z-index: auto;
-    }
+.game-controls {
+    position: static;
+    transform: none;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    gap: 12px;
+    flex-shrink: 0;
+    padding: 0;
+    margin-top: 12px;          /* solo separación con la carta */
+    margin-bottom: 0;          /* quitamos el margin-bottom grande */
+    background: transparent;
+    z-index: auto;
+}
     
     .card {
         width: 300px; /* Ligeramente más grande */
