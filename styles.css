@@ -1637,7 +1637,7 @@ background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
     .main-game-area {
         flex-direction: column;
         gap: 0;
-        padding: 5px 20px 20px 20px;
+        padding: 5px 20px 30px 20px;
         margin-left: 0;
         margin-right: 0;
         justify-content: flex-start;
@@ -1651,10 +1651,13 @@ background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
         order: 1;
         width: 100%;
         height: 140px;
-        flex-shrink: 0;
-        margin-bottom: 0;
+        margin-bottom: 10px;
+        overflow-x: auto;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 0 5px;
     }
-    
     /* Área de carta: sin padding inferior (los controles ya no son absolutos) */
    .card-game-section {
         order: 2;
